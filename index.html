@@ -1,42 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Product App</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
   </head>
   <body>
-    <div class="nav-bar"></div>
-    <div id="app">
-      <div class="product">
-        <div class="product-image">
-          <img :src="image" alt="green socks" />
-        </div>
-        <div class="product-info">
-          <h1>{{ title }}</h1>
-          <p v-if="inStock">In Stock</p>
-          <p v-else>Out of Stock</p>
-          <ul>
-            <li v-for="detail in details">{{ detail }}</li>
-          </ul>
-          <div v-for="(variant, index) in variants" 
-                :key="variant.variantId"
-                class="color-box"
-                :style="{ backgroundColor: variant.variantColor }"
-                @mouseover="updateProduct(index)">
-          </div>
-          <button @click="addToCart" 
-                  :disabled="!inStock"
-                  :class="{ disabledButton: !inStock}">Add to cart</button>
-          <div class="cart">
-            <p>Cart({{ cart }})</p>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="main.js"></script>  </body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
